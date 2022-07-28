@@ -1,13 +1,13 @@
-import Calculator from "./components/Calculator/Calculator";
-import FAQ from "./components/FAQ/FAQ";
-import SignUp from "./components/SignUp/SignUp";
+import CalculatorPage from "./Pages/Calculator/CalculatorPage";
+import FAQPage from "./Pages/FAQ/FAQPage";
+import SignUpPage from "./Pages/SignUp/SignUpPage";
 
 function App() {
   return (
     <div>
-      <SignUp />
-      <FAQ />
-      <Calculator />
+      <SignUpPage />
+      <FAQPage />
+      <CalculatorPage />
     </div>
   );
 }
