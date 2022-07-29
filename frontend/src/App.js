@@ -1,8 +1,8 @@
-import { Calculator } from './components/Calculator/Calculator';
-import { LandingPage }  from './components/LandingPage/LandingPage';
+import { Calculator } from './Pages/Calculator/Calculator';
+import { LandingPage }  from './Pages/LandingPage/LandingPage';
 import {Routes, Route} from "react-router-dom";
-import FAQ from './components/FAQ/FAQ';
-import SignUp from './components/SignUp/SignUp'
+import FAQ from './Pages/FAQ/FAQ';
+import SignUp from './Pages/SignUp/SignUp'
 
 function App() {
   return (

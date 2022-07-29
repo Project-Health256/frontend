@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineCalculator } from "react-icons/ai";
+import { LinkButton } from "../../components/Link-Button";
 
 export function CalculatorCard() {
   return <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white pb-4">
@@ -11,12 +12,6 @@ export function CalculatorCard() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
       </p>
     </div>
-    <div className="px-6 pt-4 pb-2">
-      <button className="bg-black hover:bg-[#FF99A8] text-white font-bold py-2 px-4 rounded-full focus:bg-[#FF99A8] active:bg-[#FF99A8]">
-        <Link to='/calculator'>
-          Calculator
-        </Link>
-      </button>
-    </div>
+    <LinkButton pathName="/calculator" text="Calculator"/>
   </div>;
 }
