@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { LinkButton } from "../../components/Link-Button";
 
 export function FAQCard() {
     return <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
@@ -11,12 +12,6 @@ export function FAQCard() {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
             </p>
         </div>
-        <div className="px-6 pt-4 pb-2">
-            <button className="bg-black hover:bg-[#FF99A8] text-white font-bold py-2 px-4 rounded-full active:bg-[#FF99A8] focus:bg-[#FF99A8]">
-            <Link to='/faq'>
-          FAQ
-        </Link>
-            </button>
-        </div>
-    </div>;
+        <LinkButton pathName="/faq" text="FAQ" />
+    </div>
 }
