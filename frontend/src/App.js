@@ -1,16 +1,15 @@
-import { CalculatorCard } from './components/Calculator/CalculatorCard';
-import { FAQCard } from './components/FAQ/FAQCard';
-import { SignUpSection } from './components/SignUp/SignUpSection';
+import { Calculator } from './components/Calculator/Calculator';
+import { LandingPage }  from './components/LandingPage/LandingPage';
+import {Routes, Route} from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <SignUpSection />
-      {/* Cards */}
-      <div className="flex justify-evenly pt-8 bg-[#e89c30] pb-8">
-        <CalculatorCard />
-        <FAQCard />
-      </div>
+      <Routes>
+        <Route path='/' element={<LandingPage />}/>
+        <Route path='calculator' element={<Calculator/>}/>
+        {/* <Route/> */}
+      </Routes>
     </div>
   );
 }

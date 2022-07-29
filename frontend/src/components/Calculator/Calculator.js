@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Calculator() {
+export function Calculator() {
   const [age, setAge] = useState(21);
   const [weight, setWeight] = useState(150);
   const [height, setHeight] = useState(60);
