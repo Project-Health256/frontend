@@ -12,7 +12,7 @@ export function CalculatorCard() {
       </p>
     </div>
     <div className="px-6 pt-4 pb-2">
-      <button className="bg-black hover:bg-slate-800 text-white font-bold py-2 px-4 rounded-full focus:bg-[#FF99A8] active:bg-[#FF99A8]">
+      <button className="bg-black hover:bg-[#FF99A8] text-white font-bold py-2 px-4 rounded-full focus:bg-[#FF99A8] active:bg-[#FF99A8]">
         <Link to='/calculator'>
           Calculator
         </Link>
