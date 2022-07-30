@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { LinkButton } from "../../components/Link-Button";
+import { LinkButton } from "../../components/LinkButton/Link-Button";
 
 export function FAQCard() {
     return <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
