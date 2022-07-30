@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Placeholder Background Color */
+body {
+    background-color: #e89c30;
+}

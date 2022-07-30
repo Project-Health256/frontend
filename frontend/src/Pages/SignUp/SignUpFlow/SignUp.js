@@ -1,8 +1,6 @@
-import { InputTextForm } from '../components/InputTextForm';
-import React from 'react'
+import React from 'react';
 import Button from '../components/Button';
-import InputNumberForm from '../components/InputNumberForm';
-import InputCheckBoxForm from '../components/InputCheckBoxForm';
+import { InputTextForm } from '../components/InputTextForm';
 
 export default function SignUp() {
   return (
@@ -13,10 +11,6 @@ export default function SignUp() {
       <InputTextForm text="Email" />
       <InputTextForm text="Username" />
       <InputTextForm text="Password" />
-      <InputNumberForm text="Height (in)" />
-      <InputNumberForm text="Weight (lbs)" />
-      <InputCheckBoxForm text="Male" />
-      <InputCheckBoxForm text="Female" />
       <Button text="Sign Up" />
     </div>
   )

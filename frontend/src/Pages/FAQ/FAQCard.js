@@ -1,6 +1,5 @@
 import React from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import { LinkButton } from "../../components/LinkButton/Link-Button";
 
 export function FAQCard() {
