@@ -25,14 +25,18 @@ export function Calculator() {
       }
     }
     setBmr(Math.round(calculations));
-    setTdee(Math.round(calculations * alevel));
+    calculateTDEE(alevel);
     calculateCalories(goal);
-  }
+  };
+
+  function calculateTDEE(alevel) {
+    setTdee(Math.round(calculations * alevel));
+  };
 
   function calculateCalories(goal) {
     let percentage = Math.abs(goal / 100);
     goal < 0 ? setCalories(Math.round(tdee - (tdee * percentage))) : setCalories(Math.round(tdee + (tdee * percentage)));
-  }
+  };
 
   console.log('bmr: ', bmr);
   console.log('tdee: ', tdee);
