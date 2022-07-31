@@ -25,11 +25,11 @@ export function Calculator() {
       }
     }
     setBmr(Math.round(calculations));
-    calculateTDEE(alevel);
+    calculateTDEE(calculations, alevel);
     calculateCalories(goal);
   };
 
-  function calculateTDEE(alevel) {
+  function calculateTDEE(calculations, alevel) {
     setTdee(Math.round(calculations * alevel));
   };
 
