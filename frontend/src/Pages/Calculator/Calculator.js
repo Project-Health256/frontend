@@ -5,6 +5,7 @@ import { Formik, Field, Form } from "formik";
 export function Calculator() {
   const [bmr, setBmr] = useState(0);
   const [tdee, setTdee] = useState(0);
+  const [calories, setCalories] = useState(0);
 
   function calculateBMR({age, weight, height, gender, alevel, goal, units}) {
     let calculations = 0;
@@ -25,9 +26,18 @@ export function Calculator() {
     }
     setBmr(Math.round(calculations));
     setTdee(Math.round(calculations * alevel));
-    console.log(bmr, tdee);
+    calculateCalories(goal);
   }
 
+  function calculateCalories(goal) {
+    let percentage = Math.abs(goal / 100);
+    goal < 0 ? setCalories(Math.round(tdee - (tdee * percentage))) : setCalories(Math.round(tdee + (tdee * percentage)));
+  }
+
+  console.log('bmr: ', bmr);
+  console.log('tdee: ', tdee);
+  console.log('calories: ', calories);
+  
   return (
     <>
       <div className="md:container md:mx-auto">
