@@ -6,6 +6,9 @@ export function Calculator() {
   const [bmr, setBmr] = useState(0);
   const [tdee, setTdee] = useState(0);
   const [calories, setCalories] = useState(0);
+  const [protein, setProtein] = useState(0);
+  const [fats, setFats] = useState(0);
+  const [carbs, setCarbs] = useState(0);
 
   function calculateBMR({age, weight, height, gender, alevel, goal, units}) {
     let calculations = 0;
@@ -26,21 +29,30 @@ export function Calculator() {
     }
     setBmr(Math.round(calculations));
     calculateTDEE(calculations, alevel);
-    calculateCalories(goal);
+    calculateCalories(goal, weight);
   };
 
   function calculateTDEE(calculations, alevel) {
     setTdee(Math.round(calculations * alevel));
   };
 
-  function calculateCalories(goal) {
+  function calculateCalories(goal, weight) {
     let percentage = Math.abs(goal / 100);
     goal < 0 ? setCalories(Math.round(tdee - (tdee * percentage))) : setCalories(Math.round(tdee + (tdee * percentage)));
+    calculateMacros(weight, calories);
   };
 
-  console.log('bmr: ', bmr);
-  console.log('tdee: ', tdee);
-  console.log('calories: ', calories);
+  function calculateMacros(weight, calorieCount) {
+    let proteinCalories = weight * 4;
+    let fatsCalories = (weight / 2) * 9;
+    setCarbs((calorieCount - proteinCalories - fatsCalories) / 4);
+    setProtein(weight);
+    setFats(weight / 2);
+  }
+
+  // console.log('bmr: ', bmr);
+  // console.log('tdee: ', tdee);
+  // console.log('calories: ', calories);
   
   return (
     <>
