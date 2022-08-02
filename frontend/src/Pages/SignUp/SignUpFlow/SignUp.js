@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../components/Button';
-import { InputTextForm } from '../components/InputTextForm';
+import Button from '../../../global-components/LinkButton/Button';
+import { InputTextForm } from '../../../global-components/LinkButton/InputTextForm';
 
 
 export default function SignUp() {
