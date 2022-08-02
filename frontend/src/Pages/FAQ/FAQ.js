@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillPieChart, AiFillSliders, AiFillThunderbolt, AiFillWarning, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import { LinkButton } from '../../components/LinkButton/Link-Button';
+import { LinkButton } from '../../global-components/LinkButton/Link-Button';
 
 
 

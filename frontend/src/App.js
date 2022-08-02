@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import FAQ from './Pages/FAQ/FAQ';
 import SignUp from './Pages/SignUp/SignUpFlow/SignUp'
 import FoodPlate from './Pages/FAQ/components/FoodPlate';
+import LoginPage from './Pages/Login/LoginPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='faq' element={<FAQ />} />
         <Route path='signup' element={<SignUp />} />
         <Route path='faq/foodplate' element={<FoodPlate />} />
+        <Route path='login' element={<LoginPage />} />
         {/* <Route/> */}
       </Routes>
     </div>
