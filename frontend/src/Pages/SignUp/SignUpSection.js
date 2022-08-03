@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "../../components/LinkButton/Link-Button";
+import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 
 export function SignUpSection() {
   return <header>

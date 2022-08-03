@@ -1,4 +1,3 @@
-import React from "react";
 export function InputTextForm({ text }) {
   return <div className="relative z-0 mb-6 w-8 group">
     <input type="text" name="floating_email" className="block py-2.5 px-0 w-[50em] text-sm text-white bg-transparent border-0 border-b-2 border-white appearance-none dark:text-white dark:border-white dark:focus:border-white focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required="" />
