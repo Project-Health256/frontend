@@ -11,29 +11,18 @@ export function Calculator() {
   const [carbs, setCarbs] = useState(0);
 
   function calculateBMR({age, weight, height, gender, alevel, goal, units}) {
-    let calculations = 0;
-    if (gender === 'male') {
-      if (units === 'imperial') calculations = 66.47 + (6.24 * weight) + (12.7 * height) - (6.75 * age);
-      else {
-        let kgWeight = weight * 0.45359237;
-        let cmHeight = height * 2.54;
-        calculations = 66.5 + (13.75 * kgWeight) + (5.003 * cmHeight) - (6.75 * age);
-      }
-    } else {
-      if (units === 'imperial') calculations = 65.51 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
-      else {
-        let kgWeight = weight * 0.45359237;
-        let cmHeight = height * 2.54;
-        calculations = 655.1 + (9.563 * kgWeight) + (1.850 * cmHeight) - (4.676 * age);
-      }
-    }
-    setBmr(Math.round(calculations));
-    calculateTDEE(calculations, alevel);
+    let bmrCalculations = 0;
+    const mifflinStJeorEquationInLbIn = (4.536 * weight) + (15.88 * height) - (5 * age);
+    if (gender === 'male') bmrCalculations = mifflinStJeorEquationInLbIn + 5;
+    else bmrCalculations = mifflinStJeorEquationInLbIn - 161;
+    
+    setBmr(Math.round(bmrCalculations));
+    calculateTDEE(bmrCalculations, alevel);
     calculateCalories(goal, weight);
   };
 
-  function calculateTDEE(calculations, alevel) {
-    setTdee(Math.round(calculations * alevel));
+  function calculateTDEE(bmrCalculations, alevel) {
+    setTdee(Math.round(bmrCalculations * alevel));
   };
 
   function calculateCalories(goal, weight) {
@@ -50,9 +39,12 @@ export function Calculator() {
     setFats(weight / 2);
   }
 
-  // console.log('bmr: ', bmr);
-  // console.log('tdee: ', tdee);
-  // console.log('calories: ', calories);
+  console.log('bmr: ', bmr);
+  console.log('tdee: ', tdee);
+  console.log('calories: ', calories);
+  console.log('protein: ', protein);
+  console.log('fats: ', fats);
+  console.log('carbs: ', carbs);
   
   return (
     <>
@@ -66,7 +58,7 @@ export function Calculator() {
             gender: 'male',
             alevel: 1.2,
             goal: -20,
-            units: 'imperial'
+            // units: 'imperial'
           }}
           onSubmit={(values) => {
             calculateBMR(values);
@@ -152,7 +144,7 @@ export function Calculator() {
                     Goal
                   </label>
                 </div>
-                <div className="relative z-0 mb-6 w-full group">
+                {/* <div className="relative z-0 mb-6 w-full group">
                   <Field
                     as="select"
                     name="units"
@@ -164,7 +156,7 @@ export function Calculator() {
                   <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                     Units
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
             <button
