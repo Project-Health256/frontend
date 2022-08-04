@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 
 export function Calculator() {
@@ -10,25 +10,28 @@ export function Calculator() {
   const [fats, setFats] = useState(0);
   const [carbs, setCarbs] = useState(0);
 
+  
   function calculateBMR({age, weight, height, gender, alevel, goal, units}) {
     let bmrCalculations = 0;
     const mifflinStJeorEquationInLbIn = (4.536 * weight) + (15.88 * height) - (5 * age);
     if (gender === 'male') bmrCalculations = mifflinStJeorEquationInLbIn + 5;
     else bmrCalculations = mifflinStJeorEquationInLbIn - 161;
-    
+    let tdeeCalculations = Math.round(bmrCalculations * alevel);
     setBmr(Math.round(bmrCalculations));
     calculateTDEE(bmrCalculations, alevel);
-    calculateCalories(goal, weight);
+    calculateCalories(goal, weight, tdeeCalculations);
   };
 
   function calculateTDEE(bmrCalculations, alevel) {
     setTdee(Math.round(bmrCalculations * alevel));
   };
 
-  function calculateCalories(goal, weight) {
+  function calculateCalories(goal, weight, tdeeCalculations) {
     let percentage = Math.abs(goal / 100);
-    goal < 0 ? setCalories(Math.round(tdee - (tdee * percentage))) : setCalories(Math.round(tdee + (tdee * percentage)));
-    calculateMacros(weight, calories);
+    let calorieCount = 0;
+    goal < 0 ? calorieCount = Math.round(tdeeCalculations - (tdeeCalculations * percentage)) : calorieCount = Math.round(tdeeCalculations + (tdeeCalculations * percentage));
+    setCalories(calorieCount);
+    calculateMacros(weight, calorieCount);
   };
 
   function calculateMacros(weight, calorieCount) {
@@ -37,7 +40,7 @@ export function Calculator() {
     setCarbs((calorieCount - proteinCalories - fatsCalories) / 4);
     setProtein(weight);
     setFats(weight / 2);
-  }
+  };
 
   console.log('bmr: ', bmr);
   console.log('tdee: ', tdee);
