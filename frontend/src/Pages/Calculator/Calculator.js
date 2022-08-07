@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
+import {LinkButton} from '../../global-components/LinkButton/Link-Button'
 
 export function Calculator() {
   const [bmr, setBmr] = useState(0);
@@ -52,6 +53,7 @@ export function Calculator() {
   return (
     <>
       <div className="md:container md:mx-auto">
+      <LinkButton pathName="/" text="Home" />
         <div className="flex justify-center">Calorie & Macro Calculator</div>
         <Formik
           initialValues={{
