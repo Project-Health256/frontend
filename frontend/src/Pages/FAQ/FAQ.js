@@ -9,6 +9,7 @@ export default function FAQ() {
   return (
     <div>
       <LinkButton pathName="/signup" text="Sign Up" />
+      <LinkButton pathName="/" text="Home" />
       <div className="grid grid-cols-5">
         {/* Food Plate */}
         <div className="ml-5 p-5 w-min">
