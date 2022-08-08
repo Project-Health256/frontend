@@ -1,4 +1,3 @@
-import React from "react";
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 
 export function SignUpSection() {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../../global-components/LinkButton/Button'
-import { InputTextForm } from '../../global-components/LinkButton/InputTextForm'
-import { LinkButton } from '../../global-components/LinkButton/Link-Button'
+import Button from '../global-components/LinkButton/Button'
+import { InputTextForm } from '../global-components/LinkButton/InputTextForm'
+import { LinkButton } from '../global-components/LinkButton/Link-Button'
 import AuthenticateUserNav from './authenticateUserNav'
 
 export default function AuthenticateLoginPage() {
