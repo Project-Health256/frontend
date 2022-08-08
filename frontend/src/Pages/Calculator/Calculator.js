@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import {LinkButton} from '../../global-components/LinkButton/Link-Button'
+import FoodPlate from "../FAQ/components/FoodPlate";
 
 export function Calculator() {
   const [bmr, setBmr] = useState(0);
@@ -172,6 +173,10 @@ export function Calculator() {
             </button>
           </Form>
         </Formik>
+        <br />
+        <br />
+        <br />
+        <FoodPlate />
       </div>
     </>
   );

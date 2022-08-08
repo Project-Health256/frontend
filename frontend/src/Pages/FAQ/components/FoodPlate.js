@@ -26,7 +26,7 @@ export default function FoodPlate() {
   });
 
   return (
-    <div style={{ width: 500 }}>
+    <div className="ml-10 p-5 w-min">
     <Bar data={userData} />
     </div>
   );

@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../global-components/LinkButton/Button'
 import { InputTextForm } from '../../global-components/LinkButton/InputTextForm'
-import {LinkButton} from '../../global-components/LinkButton/Link-Button'
+import { LinkButton } from '../../global-components/LinkButton/Link-Button'
+import AuthenticateLoginPage from './authenticateLoginPage'
 
 
 export default function LoginPage() {
@@ -14,6 +15,10 @@ export default function LoginPage() {
       <InputTextForm text="Username" />
       <InputTextForm text="Password" />
       <Button text="Login" />
+      {/* <br />
+      <AuthenticateLoginPage /> */}
     </div>
   )
 }
+
+
