@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 

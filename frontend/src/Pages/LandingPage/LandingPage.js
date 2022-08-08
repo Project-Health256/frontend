@@ -1,7 +1,6 @@
-import React from "react";
-import { SignUpSection } from "../SignUp/SignUpSection";
 import { CalculatorCard } from "../Calculator/CalculatorCard";
 import { FAQCard } from "../FAQ/FAQCard";
+import { SignUpSection } from "../SignUp/SignUpSection";
 
 export function LandingPage() {
   return (
