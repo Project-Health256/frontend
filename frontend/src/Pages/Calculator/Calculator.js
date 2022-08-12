@@ -11,9 +11,10 @@ export function Calculator() {
   const [protein, setProtein] = useState(0);
   const [fats, setFats] = useState(0);
   const [carbs, setCarbs] = useState(0);
+  const [estimatedProgress, setEstimatedProgress] = useState(0);
 
   
-  function calculateBMR({age, weight, height, gender, alevel, goal, units}) {
+  function calculateBMR({age, weight, height, gender, alevel, goal}) {
     let bmrCalculations = 0;
     const mifflinStJeorEquationInLbIn = (4.536 * weight) + (15.88 * height) - (5 * age);
     if (gender === 'male') bmrCalculations = mifflinStJeorEquationInLbIn + 5;
@@ -44,12 +45,21 @@ export function Calculator() {
     setFats(weight / 2);
   };
 
+  function calculateWeightProgressEstimation(goal) {
+    if (+goal === -20) setEstimatedProgress(-1);
+    else if (+goal === -10) setEstimatedProgress(-0.50);
+    else if (+goal === 0) setEstimatedProgress(0);
+    else if (+goal === 10) setEstimatedProgress(0.50);
+    else setEstimatedProgress(1);
+  };
+
   console.log('bmr: ', bmr);
   console.log('tdee: ', tdee);
   console.log('calories: ', calories);
   console.log('protein: ', protein);
   console.log('fats: ', fats);
   console.log('carbs: ', carbs);
+  console.log('estimated progress: ', estimatedProgress + " lbs per week");
   
   return (
     <>
@@ -64,10 +74,10 @@ export function Calculator() {
             gender: 'male',
             alevel: 1.2,
             goal: -20,
-            // units: 'imperial'
           }}
           onSubmit={(values) => {
             calculateBMR(values);
+            calculateWeightProgressEstimation(values.goal);
           }}
         >
           <Form className="mt-3">
@@ -150,19 +160,6 @@ export function Calculator() {
                     Goal
                   </label>
                 </div>
-                {/* <div className="relative z-0 mb-6 w-full group">
-                  <Field
-                    as="select"
-                    name="units"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  >
-                    <option value="-10">Imperial (lb, in)</option>
-                    <option value="-20">Metric (kg, cm)</option>
-                  </Field>
-                  <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Units
-                  </label>
-                </div> */}
               </div>
             </div>
             <button
@@ -176,7 +173,7 @@ export function Calculator() {
         <br />
         <br />
         <br />
-        <FoodPlate />
+        {/* <FoodPlate /> */}
       </div>
     </>
   );
