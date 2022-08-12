@@ -3,6 +3,7 @@ import { Line, Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import { UserData } from "../../../Data/Data";
 import { Chart as ChartJS } from "chart.js/auto";
+import ToggleSwitch from "../../../global-components/LinkButton/ToggleSwitch";
 
 export default function FoodPlate() {
   const [user2WeightEntries, setUser2WeightEntries] = useState([]);
@@ -14,7 +15,7 @@ export default function FoodPlate() {
           labels: data.map(data => data.created_at),
           datasets: [
             {
-              label: "Weight Entries",
+              label: "Losing Weight",
               data: data.map(data => data.weight_lbs),
               backgroundColor:"#fff",
               borderColor: "red",
@@ -24,6 +25,15 @@ export default function FoodPlate() {
           ],
         }))
   }, [])
+
+  const options = {
+    plugins : {
+      title : {
+        display : true,
+        text : "User's Weight Entries"
+      }
+    }
+  }
 
 console.log(user2WeightEntries)
 
@@ -72,8 +82,12 @@ console.log(user2WeightEntries)
   // })
 
   return (
-    <div className="ml-10 p-5 w-3/4 flex justify-between">
-      <Line data={user2WeightEntries} />
+    <div className="ml-10 p-5 w-3/4">
+      <Line data={user2WeightEntries} options={options}/>
+      <br />
+      <br />
+      <br />
+      <ToggleSwitch text="Losing Weight"/>
     </div>
   );
 }
