@@ -87,7 +87,12 @@ console.log(user2WeightEntries)
       <br />
       <br />
       <br />
-      <ToggleSwitch text="Losing Weight"/>
+      <div className="flex justify-between">
+        {/* Losing Weight */}
+      <ToggleSwitch text="Lose Weight" label="losing-weight-toggle" color="red"/>
+      {/* Gain Weight */}
+      <ToggleSwitch text="Gain Weight" label="gain-weight-toggle" color="green"/>
+      </div>
     </div>
   );
 }
