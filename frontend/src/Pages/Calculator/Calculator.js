@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import {LinkButton} from '../../global-components/LinkButton/Link-Button'
 import FoodPlate from "../FAQ/components/FoodPlate";
+import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
 
 export function Calculator() {
   const [bmr, setBmr] = useState(0);
@@ -53,13 +54,15 @@ export function Calculator() {
     else setEstimatedProgress(1);
   };
 
-  console.log('bmr: ', bmr);
-  console.log('tdee: ', tdee);
-  console.log('calories: ', calories);
-  console.log('protein: ', protein);
-  console.log('fats: ', fats);
-  console.log('carbs: ', carbs);
-  console.log('estimated progress: ', estimatedProgress + " lbs per week");
+  const calculationDataSet = {bmr, tdee, calories, protein, fats, carbs, estimatedProgress};
+  // console.log(calculationDataSet)
+  // console.log('bmr: ', bmr);
+  // console.log('tdee: ', tdee);
+  // console.log('calories: ', calories);
+  // console.log('protein: ', protein);
+  // console.log('fats: ', fats);
+  // console.log('carbs: ', carbs);
+  // console.log('estimated progress: ', estimatedProgress + " lbs per week");
   
   return (
     <>
@@ -171,6 +174,7 @@ export function Calculator() {
           </Form>
         </Formik>
         <br />
+        <CalculatorResults props={calculationDataSet}/>
         <br />
         <br />
         {/* <FoodPlate /> */}
