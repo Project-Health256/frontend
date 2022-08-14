@@ -3,7 +3,7 @@ import { LandingPage } from './Pages/LandingPage/LandingPage';
 import { Routes, Route } from "react-router-dom";
 import FAQ from './Pages/FAQ/FAQ';
 import SignUp from './Pages/SignUp/SignUpFlow/SignUp'
-import FoodPlate from './Pages/FAQ/components/FoodPlate';
+import FoodPlate from './Pages/FAQ/components/Charts';
 import LoginPage from './Pages/Login/LoginPage';
 
 function App() {

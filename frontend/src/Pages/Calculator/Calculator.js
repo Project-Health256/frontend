@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import {LinkButton} from '../../global-components/LinkButton/Link-Button'
-import FoodPlate from "../FAQ/components/FoodPlate";
+import Charts from "../FAQ/components/Charts";
 import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
 
 export function Calculator() {
@@ -177,7 +177,7 @@ export function Calculator() {
         <CalculatorResults props={calculationDataSet}/>
         <br />
         <br />
-        {/* <FoodPlate /> */}
+        <Charts />
       </div>
     </>
   );
