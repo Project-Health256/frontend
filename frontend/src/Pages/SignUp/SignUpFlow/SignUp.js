@@ -3,7 +3,7 @@ import Button from '../../../global-components/LinkButton/Button';
 import { InputTextForm } from '../../../global-components/LinkButton/InputTextForm';
 import { LinkButton } from '../../../global-components/LinkButton/Link-Button';
 import UpdateRegistration  from '../../../updatedLoginSignIn/UpdateRegistration'
-import '../../../registration.css'
+// import '../../../registration.css'
 
 
 export default function SignUp() {
