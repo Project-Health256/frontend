@@ -4,11 +4,11 @@ import { InputTextForm } from "../../global-components/LinkButton/InputTextForm"
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 import { useState, useContext } from "react";
 import AppContext from "../../context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const {setUser, setIsAuth, isAuth } = useContext(AppContext);
+  const { setUser, setIsAuth, isAuth } = useContext(AppContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,15 +36,19 @@ export default function LoginPage() {
     });
 
     const result = await loggingIn.json();
-    const userToken = result.token;
-    setUser(result.user);
-    setIsAuth(true);
-    window.localStorage.setItem("token", userToken);
-    window.localStorage.setItem("currUser", JSON.stringify(result.user));
-    navigate('/');
-  };
+    if (result.token) {
+      const userToken = result.token;
+      setUser(result.user);
+      setIsAuth(true);
+      window.localStorage.setItem("token", userToken);
+      window.localStorage.setItem("currUser", JSON.stringify(result.user));
+    } else if (!result.token) {
+      setIsAuth(false);
+      return;
+    }
+  }
 
-  return (
+  return isAuth ? <Navigate to={'/'}/> : (
     <div className="bg-sunray-500 p-10">
       <LinkButton pathName="/" text="Home" />
       <h1 className="text-white font-bold text-center text-5xl">Login</h1>
