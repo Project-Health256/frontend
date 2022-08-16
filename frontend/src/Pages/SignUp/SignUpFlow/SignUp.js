@@ -3,7 +3,7 @@ import Button from "../../../global-components/LinkButton/Button";
 import { InputTextForm } from "../../../global-components/LinkButton/InputTextForm";
 import { LinkButton } from "../../../global-components/LinkButton/Link-Button";
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UpdateRegistration from "../../../updatedLoginSignIn/UpdateRegistration";
 // import '../../../registration.css'
 

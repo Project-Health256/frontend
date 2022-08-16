@@ -11,7 +11,15 @@ const ContextProvider = (props) => {
         setUser,
         isAuth,
         setIsAuth
-    }
+    };
+
+    if(isAuth === true) {
+        setTimeout(() => {
+            setIsAuth(false);
+            setUser({});
+            window.localStorage.clear();
+        }, (1000 * 60 * 60));
+    };
 
     return (
         <AppContext.Provider value={context}>
