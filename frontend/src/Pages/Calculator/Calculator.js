@@ -177,7 +177,7 @@ export function Calculator() {
         <CalculatorResults props={calculationDataSet}/>
         <br />
         <br />
-        {/* <Charts /> */}
+        <Charts />
       </div>
     </>
   );
