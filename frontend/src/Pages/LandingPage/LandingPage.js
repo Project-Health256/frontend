@@ -13,8 +13,8 @@ export function LandingPage() {
     <>
       <NavBar />
       <br></br>
-      {!isAuth && <SignUpSection />}
-      {isAuth && <AuthLandingPageTop />}
+      {isAuth === false && <SignUpSection />}
+      {isAuth === true && <AuthLandingPageTop />}
       <div className="flex justify-evenly pt-8 bg-[#e89c30] pb-8">
         <CalculatorCard />
         <FAQCard />
