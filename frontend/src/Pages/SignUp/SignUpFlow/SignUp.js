@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../../../global-components/LinkButton/Button";
 import { InputTextForm } from "../../../global-components/LinkButton/InputTextForm";
 import { LinkButton } from "../../../global-components/LinkButton/Link-Button";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
 import UpdateRegistration from "../../../updatedLoginSignIn/UpdateRegistration";
+import AppContext from "../../../context";
 // import '../../../registration.css'
 
 export default function SignUp() {
+  const { isAuth } = useContext(AppContext);
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -51,7 +53,7 @@ export default function SignUp() {
     navigate('/login', {replace : true});
   };
 
-  return (
+  return isAuth ? <Navigate to={'/'}/> : (
     <>
       <div className="bg-sunray-500 p-10">
         <LinkButton pathName="/" text="Home" />
