@@ -26,10 +26,10 @@ export function AuthLandingPageTop() {
               {dailyQuote}
             </h5>
             <br></br>
-            <p className="mb-3 font-normal sm:text-center text-gray-700 dark:text-gray-400">
+            {/* <p className="mb-3 font-normal sm:text-center text-gray-700 dark:text-gray-400">
               Here are the biggest enterprise technology acquisitions of 2021 so
               far, in reverse chronological order.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
