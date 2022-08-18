@@ -7,7 +7,7 @@ export function FAQCard() {
         <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Frequntly Asked Questions</div>
             <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+            Click below to access pages of continually requested questions 
             </p>
         </div>
         <LinkButton pathName="/faq" text="FAQ" />

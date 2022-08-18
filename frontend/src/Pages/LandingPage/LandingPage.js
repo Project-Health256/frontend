@@ -16,7 +16,7 @@ export function LandingPage() {
       <br></br>
       {!isAuth && <SignUpSection />}
       {isAuth && <AuthLandingPageTop />}
-      <div className="flex flex-col sm:flex-row items-center md:flex-row lg:flex-row sm:justify-evenly pt-8 bg-[#e89c30] pb-8">
+      <div className="flex flex-col sm:flex-row items-center md:flex-row lg:flex-row sm:justify-evenly pt-8 pb-8">
         <CalculatorCard />
         <FAQCard />
       </div>
