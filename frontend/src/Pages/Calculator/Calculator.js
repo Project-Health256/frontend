@@ -1,8 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Formik, Field, Form } from "formik";
 import {LinkButton} from '../../global-components/LinkButton/Link-Button'
 import Charts from "../FAQ/components/Charts";
+import NavBar from "../../global-components/NavBar/Navbar";
+import Footer from "../../global-components/Footer/Footer";
 import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
 
 export function Calculator() {
@@ -13,7 +15,13 @@ export function Calculator() {
   const [fats, setFats] = useState(0);
   const [carbs, setCarbs] = useState(0);
   const [estimatedProgress, setEstimatedProgress] = useState(0);
+  // const loggedInUser = JSON.parse(window.localStorage.getItem("currUser"));
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/user-starting-metrics/${loggedInUser.id}`)
+  //     .then(res => res.json())
+  //     .then(data => setUserSessions(data.singleMetric));
+  // },[]);
   
   function calculateBMR({age, weight, height, gender, alevel, goal}) {
     let bmrCalculations = 0;
@@ -55,19 +63,10 @@ export function Calculator() {
   };
 
   const calculationDataSet = {bmr, tdee, calories, protein, fats, carbs, estimatedProgress};
-  // console.log(calculationDataSet)
-  // console.log('bmr: ', bmr);
-  // console.log('tdee: ', tdee);
-  // console.log('calories: ', calories);
-  // console.log('protein: ', protein);
-  // console.log('fats: ', fats);
-  // console.log('carbs: ', carbs);
-  // console.log('estimated progress: ', estimatedProgress + " lbs per week");
   
   return (
     <>
-      <div className="md:container md:mx-auto">
-      <LinkButton pathName="/" text="Home" />
+      <div className="md:container md:mx-auto mt-3">
         <div className="flex justify-center">Calorie & Macro Calculator</div>
         <Formik
           initialValues={{
@@ -177,8 +176,9 @@ export function Calculator() {
         <CalculatorResults props={calculationDataSet}/>
         <br />
         <br />
-        <Charts />
+        {/* <Charts /> */}
       </div>
+      <br></br>
     </>
   );
 }
