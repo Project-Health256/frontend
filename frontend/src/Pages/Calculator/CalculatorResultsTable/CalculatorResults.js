@@ -1,7 +1,7 @@
 export function CalculatorResults(obj) {
     console.log(obj.props.bmr)
   return (
-    <div className="overflow-x-auto relative">
+    <div className="overflow-x-auto relative rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr className="flex justify-center">
