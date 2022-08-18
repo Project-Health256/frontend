@@ -3,6 +3,7 @@ import { FAQCard } from "../FAQ/FAQCard";
 import { SignUpSection } from "../SignUp/SignUpSection";
 import { AuthLandingPageTop } from "../../AuthPages/AuthLandingPageTop/AuthLandingPageTop";
 import NavBar from "../../global-components/NavBar/Navbar";
+import Footer from "../../global-components/Footer/Footer";
 import { useContext } from "react";
 import AppContext from "../../context";
 
@@ -19,6 +20,8 @@ export function LandingPage() {
         <CalculatorCard />
         <FAQCard />
       </div>
+      <br></br>
+      <Footer />
     </>
   );
 }
