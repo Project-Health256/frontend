@@ -8,7 +8,7 @@ export function CalculatorCard() {
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">Calculator</div>
       <p className="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+      Click below to access our calculator to calculate your BMI
       </p>
     </div>
     <LinkButton pathName="/calculator" text="Calculator"/>
