@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { Formik, Field, Form } from "formik";
-import {LinkButton} from '../../global-components/LinkButton/Link-Button'
+import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 import Charts from "../FAQ/components/Charts";
 import NavBar from "../../global-components/NavBar/Navbar";
 import Footer from "../../global-components/Footer/Footer";
@@ -15,36 +15,39 @@ export function Calculator() {
   const [fats, setFats] = useState(0);
   const [carbs, setCarbs] = useState(0);
   const [estimatedProgress, setEstimatedProgress] = useState(0);
-  // const loggedInUser = JSON.parse(window.localStorage.getItem("currUser"));
+  const currUser = window.localStorage.getItem("currUser");
+  const parsedUser = JSON.parse(currUser);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:8000/user-starting-metrics/${loggedInUser.id}`)
-  //     .then(res => res.json())
-  //     .then(data => setUserSessions(data.singleMetric));
-  // },[]);
-  
-  function calculateBMR({age, weight, height, gender, alevel, goal}) {
+
+  function calculateBMR({ age, weight, height, gender, alevel, goal }) {
     let bmrCalculations = 0;
-    const mifflinStJeorEquationInLbIn = (4.536 * weight) + (15.88 * height) - (5 * age);
-    if (gender === 'male') bmrCalculations = mifflinStJeorEquationInLbIn + 5;
+    const mifflinStJeorEquationInLbIn =
+      4.536 * weight + 15.88 * height - 5 * age;
+    if (gender === "male") bmrCalculations = mifflinStJeorEquationInLbIn + 5;
     else bmrCalculations = mifflinStJeorEquationInLbIn - 161;
     let tdeeCalculations = Math.round(bmrCalculations * alevel);
     setBmr(Math.round(bmrCalculations));
     calculateTDEE(bmrCalculations, alevel);
     calculateCalories(goal, weight, tdeeCalculations);
-  };
+  }
 
   function calculateTDEE(bmrCalculations, alevel) {
     setTdee(Math.round(bmrCalculations * alevel));
-  };
+  }
 
   function calculateCalories(goal, weight, tdeeCalculations) {
     let percentage = Math.abs(goal / 100);
     let calorieCount = 0;
-    goal < 0 ? calorieCount = Math.round(tdeeCalculations - (tdeeCalculations * percentage)) : calorieCount = Math.round(tdeeCalculations + (tdeeCalculations * percentage));
+    goal < 0
+      ? (calorieCount = Math.round(
+          tdeeCalculations - tdeeCalculations * percentage
+        ))
+      : (calorieCount = Math.round(
+          tdeeCalculations + tdeeCalculations * percentage
+        ));
     setCalories(calorieCount);
     calculateMacros(weight, calorieCount);
-  };
+  }
 
   function calculateMacros(weight, calorieCount) {
     let proteinCalories = weight * 4;
@@ -52,18 +55,48 @@ export function Calculator() {
     setCarbs((calorieCount - proteinCalories - fatsCalories) / 4);
     setProtein(weight);
     setFats(weight / 2);
-  };
+  }
 
   function calculateWeightProgressEstimation(goal) {
     if (+goal === -20) setEstimatedProgress(-1);
-    else if (+goal === -10) setEstimatedProgress(-0.50);
+    else if (+goal === -10) setEstimatedProgress(-0.5);
     else if (+goal === 0) setEstimatedProgress(0);
-    else if (+goal === 10) setEstimatedProgress(0.50);
+    else if (+goal === 10) setEstimatedProgress(0.5);
     else setEstimatedProgress(1);
+  }
+
+   async function setUserMetrics(metricValues) {
+    const metricInfo = {
+      age: metricValues.age,
+      weight: metricValues.weight,
+      height: metricValues.height,
+      gender: metricValues.gender,
+      activity_levels: metricValues.alevel,
+      goal: metricValues.goal,
+      user: parsedUser.id,
+    };
+
+    const postingUserMetrics = await fetch("http://localhost:8000/user-starting-metrics", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(metricInfo),
+      })
   };
 
-  const calculationDataSet = {bmr, tdee, calories, protein, fats, carbs, estimatedProgress};
-  
+
+
+  const calculationDataSet = {
+    bmr,
+    tdee,
+    calories,
+    protein,
+    fats,
+    carbs,
+    estimatedProgress,
+  };
+
   return (
     <>
       <div className="md:container md:mx-auto mt-3">
@@ -73,13 +106,16 @@ export function Calculator() {
             age: 21,
             weight: 180,
             height: 66,
-            gender: 'male',
+            gender: "male",
             alevel: 1.2,
             goal: -20,
           }}
           onSubmit={(values) => {
             calculateBMR(values);
             calculateWeightProgressEstimation(values.goal);
+            if (window.localStorage.getItem("token")) {
+              setUserMetrics(values);
+            }
           }}
         >
           <Form className="mt-3">
@@ -168,12 +204,12 @@ export function Calculator() {
               type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Submit
+              {window.localStorage.getItem("token") ? "Submit and Create Session" : "Submit" }
             </button>
           </Form>
         </Formik>
         <br />
-        <CalculatorResults props={calculationDataSet}/>
+        <CalculatorResults props={calculationDataSet} />
         <br />
         <br />
         {/* <Charts /> */}

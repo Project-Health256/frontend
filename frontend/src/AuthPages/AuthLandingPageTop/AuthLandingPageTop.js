@@ -10,11 +10,6 @@ export function AuthLandingPageTop() {
 
   return (
     <header>
-      {/* <div className="text-center bg-[#efb86c] text-gray-800 py-20 px-6 pt-16"> */}
-      {/* <div className="flex justify-center">
-        </div> */}
-
-      {/* </div> */}
       <div>
         <div className="flex justify-evenly h-96 items-center py-20 px-6 pt-16 bg-white rounded-lg md:flex-row dark:border-gray-700 dark:bg-gray-800">
           <img
@@ -26,10 +21,6 @@ export function AuthLandingPageTop() {
               {dailyQuote}
             </h5>
             <br></br>
-            {/* <p className="mb-3 font-normal sm:text-center text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p> */}
           </div>
         </div>
       </div>
