@@ -8,15 +8,15 @@ import { useContext } from "react";
 import AppContext from "../../context";
 
 export function LandingPage() {
-  const { isAuth } = useContext(AppContext);
+  const {isAuth} = useContext(AppContext);
 
   return (
     <>
       <NavBar />
       <br></br>
-      {!isAuth && <SignUpSection />}
-      {isAuth && <AuthLandingPageTop />}
-      <div className="flex flex-col sm:flex-row items-center md:flex-row lg:flex-row sm:justify-evenly pt-8 pb-8">
+      {!isAuth && !window.localStorage.getItem("token") && <SignUpSection />}
+      {window.localStorage.getItem("token") && <AuthLandingPageTop />}
+      <div className="flex flex-col sm:flex-row items-center md:flex-row lg:flex-row sm:justify-evenly pt-8 bg-[#e89c30] pb-8">
         <CalculatorCard />
         <FAQCard />
       </div>

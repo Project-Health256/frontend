@@ -38,10 +38,13 @@ export default function LoginPage() {
     const result = await loggingIn.json();
     if (result.token) {
       const userToken = result.token;
-      setUser(result.user);
-      setIsAuth(true);
       window.localStorage.setItem("token", userToken);
       window.localStorage.setItem("currUser", JSON.stringify(result.user));
+      const currUser = window.localStorage.getItem("currUser");
+      const parsedUser = JSON.parse(currUser);
+      if (window.localStorage.getItem("token")) setIsAuth(true);
+      setUser(parsedUser);
+      setIsAuth(true)
     } else if (!result.token) {
       setIsAuth(false);
       return;

@@ -25,10 +25,10 @@ function handleSignOut () {
             </span>
           </a>
           <div className="flex md:order-2">
-            {isAuth === false && (
+            {!window.localStorage.getItem("token") && (
                 <LinkButton pathName="/login" text="Log In" />
             )}
-            {isAuth === true && (
+            {window.localStorage.getItem("token") && (
                 <div className="px-6 pt-4 pb-2">
                 <button onClick={handleSignOut} type="button" className="bg-black hover:bg-[#FF99A8] text-white font-bold py-2 px-4 rounded-full active:bg-[#FF99A8] focus:bg-[#FF99A8]">
                   <Link to={'/'}>
@@ -46,7 +46,7 @@ function handleSignOut () {
               <li>
                 <a
                   href="/"
-                  className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Home
                 </a>
@@ -66,6 +66,16 @@ function handleSignOut () {
                 >
                   FAQ
                 </a>
+              </li>
+              <li>
+              {window.localStorage.getItem("token") && (
+                  <a
+                  href="/chart"
+                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Chart
+                </a>
+                )}
               </li>
             </ul>
           </div>
