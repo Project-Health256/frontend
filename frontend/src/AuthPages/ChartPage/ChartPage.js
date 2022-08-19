@@ -4,31 +4,41 @@ import Footer from "../../global-components/Footer/Footer";
 import { Calculator } from "../../Pages/Calculator/Calculator";
 import { UserProfileCard } from "./UserProfileCard";
 import { useState, useEffect } from "react";
+import Chart from "./Chart";
 
 export function ChartPage() {
   const windowStorageUser = window.localStorage.getItem("currUser");
   const verifiedUser = JSON.parse(windowStorageUser);
-  const [userWeightEntries, setUserWeightEntries] = useState([]);
+  const [userSessions, setUserSessions] = useState([])
+  const [currentSession, setCurrentSession] = useState(5)
+
   const currUser = window.localStorage.getItem("currUser");
   const parsedUser = JSON.parse(currUser);
-  let selectedSession = 0;
+
 
   useEffect(() => {
     const data = async () => {
       await fetch(`http://localhost:8000/user-starting-metrics/${parsedUser.id}`)
-      .then(res => res.json())
-      .then(data => setUserSessions(data))
+        .then(res => res.json())
+        .then(data => setUserSessions(data))
     }
     data();
-  },[userSessions.length]);
+  }, [userSessions.length, parsedUser.id]);
 
   function handleSelectedSession(e) {
-    selectedSession = +e.target.value;
-    console.log(selectedSession);
-    fetch(`http://localhost:8000/weight-entries/${selectedSession}`)
-    .then(res => res.json())
-    .then(data => setUserWeightEntries(data))
+    const selectedSession = +e.target.value;
+
+    if (selectedSession) {
+      setCurrentSession(+e.target.value)
+    }
+
+    console.log(currentSession);
+    // fetch(`http://localhost:8000/weight-entries/${currentSession}`)
+    //   .then(res => res.json())
+    //   .then(data => setUserWeightEntries(data))
   };
+
+  console.log('current session', currentSession);
 
   return (
     <>
@@ -60,7 +70,7 @@ export function ChartPage() {
             </label>
             <select
               onChange={handleSelectedSession}
-              className="bg-gray-50 mb-5 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 mb-5 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black"
             >
               {userSessions.length === 0 && (
                 <>
@@ -69,7 +79,7 @@ export function ChartPage() {
               )}
               {userSessions.length > 0 && (
                 <>
-                {userSessions.map((sessions) => (<option value={sessions.id}>Starting Weight: {sessions.weight}, Goal: {sessions.goal}</option>))}
+                  {userSessions.map((sessions) => (<option value={sessions.id}>Starting Weight: {sessions.weight}, Goal: {sessions.goal}</option>))}
                 </>
               )}
             </select>
@@ -77,6 +87,7 @@ export function ChartPage() {
         </div>
       </div>
       <br></br>
+      <Chart session={currentSession}/>
       <Footer />
     </>
   );

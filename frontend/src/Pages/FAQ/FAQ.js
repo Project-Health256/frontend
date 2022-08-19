@@ -1,15 +1,15 @@
 import { AiFillPieChart, AiFillSliders, AiFillThunderbolt, AiFillWarning, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { LinkButton } from '../../global-components/LinkButton/Link-Button';
+import NavBar from "../../global-components/NavBar/Navbar";
 
 
 
 export default function FAQ() {
   return (
-    <div>
-      <LinkButton pathName="/signup" text="Sign Up" />
-      <LinkButton pathName="/" text="Home" />
-      <div className="grid grid-cols-5">
+    <>
+    <NavBar />
+      <div className="grid grid-cols-5 mt-4">
         {/* Food Plate */}
         <div className="ml-5 p-5 w-min">
           <Link to="foodplate">
@@ -46,6 +46,6 @@ export default function FAQ() {
           </Link>
         </div>
       </div>;
-    </div>
+    </>
   )
 }
