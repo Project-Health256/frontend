@@ -13,7 +13,7 @@ export const UserData = [
   },
   {
     id: 3,
-    year: 'week 4',
+    year: 2018,
     weeks: 78888,
     userLost: 555,
   },
