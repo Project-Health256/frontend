@@ -15,14 +15,15 @@ export function ChartPage() {
   const currUser = window.localStorage.getItem("currUser");
   const parsedUser = JSON.parse(currUser);
 
+  const data = async () => {
+    await fetch(
+      `http://localhost:8000/user-starting-metrics/${parsedUser.id}`
+    )
+      .then((res) => res.json())
+      .then((data) => setUserSessions(data));
+  };
+  
   useEffect(() => {
-    const data = async () => {
-      await fetch(
-        `http://localhost:8000/user-starting-metrics/${parsedUser.id}`
-      )
-        .then((res) => res.json())
-        .then((data) => setUserSessions(data));
-    };
     data();
   }, [userSessions.length]);
 
@@ -72,7 +73,7 @@ export function ChartPage() {
           />
         </div>
         <div className="">
-          <Calculator />
+          <Calculator userSessions={userSessions} getData={data}/>
           <div className="flex w-2/5">
             <label
               for="userMetrics"
