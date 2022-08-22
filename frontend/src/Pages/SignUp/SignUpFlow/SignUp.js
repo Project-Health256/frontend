@@ -6,6 +6,7 @@ import { useState, useContext } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import UpdateRegistration from "../../../updatedLoginSignIn/UpdateRegistration";
 import AppContext from "../../../context";
+import Swal from 'sweetalert2'
 // import '../../../registration.css'
 
 export default function SignUp() {
@@ -50,7 +51,11 @@ export default function SignUp() {
     });
 
     const results = await signUpUser.json();
-    navigate('/login', {replace : true});
+    if (results.message === "user by this email already exists") {
+      Swal.fire(
+       'This Email Is Already In Use'
+      )
+    } else navigate('/login', {replace : true});
   };
 
   return isAuth ? <Navigate to={'/'}/> : (
