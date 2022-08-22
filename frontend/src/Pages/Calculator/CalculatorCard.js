@@ -3,7 +3,7 @@ import { AiOutlineCalculator } from "react-icons/ai";
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 
 export function CalculatorCard() {
-  return <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white pb-4">
+  return <div className="max-w-sm shadow-2xl rounded overflow-hidden shadow-lg bg-white pb-4">
     <AiOutlineCalculator className="text-[5rem] pt-2 pl-2" />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">Calculator</div>

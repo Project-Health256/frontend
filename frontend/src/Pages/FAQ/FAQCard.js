@@ -2,7 +2,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 
 export function FAQCard() {
-    return <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    return <div className="max-w-sm shadow-2xl rounded overflow-hidden shadow-lg bg-white">
         <AiOutlineQuestionCircle className="text-[5rem] pt-2 pl-2" />
         <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Frequently Asked Questions</div>
