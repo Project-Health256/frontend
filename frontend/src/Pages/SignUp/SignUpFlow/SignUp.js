@@ -41,7 +41,7 @@ export default function SignUp() {
       password
     };
     
-    const signUpUser = await fetch('http://localhost:8000/user', {
+    const signUpUser = await fetch('https://provident-life.herokuapp.com/user', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

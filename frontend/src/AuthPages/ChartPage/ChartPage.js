@@ -17,7 +17,7 @@ export function ChartPage() {
 
   const data = async () => {
     await fetch(
-      `http://localhost:8000/user-starting-metrics/${parsedUser.id}`
+      `https://provident-life.herokuapp.com/user-starting-metrics/${parsedUser.id}`
     )
       .then((res) => res.json())
       .then((data) => setUserSessions(data));
@@ -29,7 +29,7 @@ export function ChartPage() {
 
   async function getSession(session) {
     const weightData = await fetch(
-      `http://localhost:8000/weight-entries/${session}`
+      `https://provident-life.herokuapp.com/weight-entries/${session}`
     )
       .then((res) => res.json())
       .then((data) => setUserWeightEntries(data.allWeightEntries));
@@ -51,7 +51,7 @@ export function ChartPage() {
       userStartingMetrics: currentSession
     };
 
-    const postNewWeight = await fetch('http://localhost:8000/weight-entries', {
+    const postNewWeight = await fetch('https://provident-life.herokuapp.com/weight-entries', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

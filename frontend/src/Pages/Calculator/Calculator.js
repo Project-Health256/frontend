@@ -72,7 +72,7 @@ export function Calculator({getData}) {
     };
 
     const postingUserMetrics = await fetch(
-      "http://localhost:8000/user-starting-metrics",
+      "https://provident-life.herokuapp.com/user-starting-metrics",
       {
         method: "POST",
         headers: {

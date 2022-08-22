@@ -27,7 +27,7 @@ export default function LoginPage() {
       password,
     };
 
-    const loggingIn = await fetch("http://localhost:8000/user/login", {
+    const loggingIn = await fetch("https://provident-life.herokuapp.com/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
