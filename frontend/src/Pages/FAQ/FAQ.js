@@ -1,6 +1,5 @@
 import { AiFillPieChart, AiFillSliders, AiFillThunderbolt, AiFillWarning, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import { LinkButton } from '../../global-components/LinkButton/Link-Button';
 import NavBar from "../../global-components/NavBar/Navbar";
 
 
@@ -8,40 +7,40 @@ import NavBar from "../../global-components/NavBar/Navbar";
 export default function FAQ() {
   return (
     <>
-    <NavBar />
-      <div className="grid grid-cols-5 mt-4">
+      <NavBar />
+      <div className="grid grid-cols-5 mt-4 ">
         {/* Food Plate */}
-        <div className="ml-5 p-5 w-min">
+        <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <Link to="foodplate">
-            <AiFillPieChart className="text-[5rem] pt-2 pl-2 hover:text-sunray-50" />
+            <AiFillPieChart className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
             <figcaption className="text-center">Food Plate</figcaption>
           </Link>
         </div>
-        <div className="grid grid-cols-5">
+        <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Effective Workouts */}
           <Link to="foodplate">
-            <AiFillSliders className="text-[5rem] pt-2 pl-2 hover:text-sunray-50" />
+            <AiFillSliders className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
             <figcaption className="text-center">Effective Workouts</figcaption>
           </Link>
         </div>
-        <div className="grid grid-cols-5">
+        <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Calories  */}
           <Link to="foodplate">
-            <AiFillThunderbolt className="text-[5rem] pt-2 pl-2 hover:text-sunray-50" />
+            <AiFillThunderbolt className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
             <figcaption className="text-center">Calories</figcaption>
           </Link>
         </div>
-        <div className="grid grid-cols-5">
+        <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Avoidance */}
           <Link to="foodplate">
-            <AiFillWarning className="text-[5rem] pt-2 pl-2 hover:text-sunray-50" />
+            <AiFillWarning className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
             <figcaption className="text-center">Avoidance</figcaption>
           </Link>
         </div>
-        <div className="grid grid-cols-5">
+        <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* User Account */}
           <Link to="foodplate">
-            <AiOutlineUser className="text-[5rem] pt-2 pl-2 hover:text-sunray-50" />
+            <AiOutlineUser className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
             <figcaption className="text-center">User Account</figcaption>
           </Link>
         </div>
