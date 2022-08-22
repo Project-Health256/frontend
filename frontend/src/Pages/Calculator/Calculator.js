@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
+import Swal from 'sweetalert2'
 
 export function Calculator({getData}) {
   const [bmr, setBmr] = useState(0);
@@ -81,7 +82,11 @@ export function Calculator({getData}) {
         body: JSON.stringify(metricInfo),
       }
     );
-
+    Swal.fire(
+      'Congrats!',
+      'Successfully Created Session!',
+      'success'
+    )
     getData();
   }
 
