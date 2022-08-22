@@ -1,13 +1,9 @@
 import React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { Formik, Field, Form } from "formik";
-import { LinkButton } from "../../global-components/LinkButton/Link-Button";
-import Charts from "../FAQ/components/Charts";
-import NavBar from "../../global-components/NavBar/Navbar";
-import Footer from "../../global-components/Footer/Footer";
 import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
 
-export function Calculator() {
+export function Calculator({getData}) {
   const [bmr, setBmr] = useState(0);
   const [tdee, setTdee] = useState(0);
   const [calories, setCalories] = useState(0);
@@ -17,7 +13,6 @@ export function Calculator() {
   const [estimatedProgress, setEstimatedProgress] = useState(0);
   const currUser = window.localStorage.getItem("currUser");
   const parsedUser = JSON.parse(currUser);
-
 
   function calculateBMR({ age, weight, height, gender, alevel, goal }) {
     let bmrCalculations = 0;
@@ -65,7 +60,7 @@ export function Calculator() {
     else setEstimatedProgress(1);
   }
 
-   async function setUserMetrics(metricValues) {
+  async function setUserMetrics(metricValues) {
     const metricInfo = {
       age: metricValues.age,
       weight: metricValues.weight,
@@ -76,16 +71,19 @@ export function Calculator() {
       user: parsedUser.id,
     };
 
-    const postingUserMetrics = await fetch("http://localhost:8000/user-starting-metrics", {
+    const postingUserMetrics = await fetch(
+      "http://localhost:8000/user-starting-metrics",
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(metricInfo),
-      })
-  };
+      }
+    );
 
-
+    getData();
+  }
 
   const calculationDataSet = {
     bmr,
@@ -204,7 +202,9 @@ export function Calculator() {
               type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              {window.localStorage.getItem("token") ? "Submit and Create Session" : "Submit" }
+              {window.localStorage.getItem("token")
+                ? "Submit and Create Session"
+                : "Submit"}
             </button>
           </Form>
         </Formik>
