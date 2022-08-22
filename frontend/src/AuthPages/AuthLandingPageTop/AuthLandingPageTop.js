@@ -4,9 +4,12 @@ export function AuthLandingPageTop() {
     "Nothing is impossible, the word itself says 'I'm possible'!",
     "The best preparation for tommorow is doing your best today.",
     "It takes one month to see yourself change, 3 months for your friends and family, and 4 for the rest of the world.",
+    "We cannot solve problems with the kind of thinking we employed when we came up with them.",
+    'Learn as if you will live forever, live like you will die tomorrow.',
+    'Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.'
   ];
 
-  const dailyQuote = motivationalQuotes[Math.floor(Math.random() * 4)];
+  const dailyQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
 
   return (
     <header>

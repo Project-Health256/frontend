@@ -30,7 +30,7 @@ function NavBar() {
             )}
             {window.localStorage.getItem("token") && (
               <div className="px-6 pt-4 pb-2">
-                <button onClick={handleSignOut} type="button" className="bg-black hover:bg-[#FF99A8] text-white font-bold py-2 px-4 rounded-full active:bg-[#FF99A8] focus:bg-[#FF99A8]">
+                <button onClick={handleSignOut} type="button" className="bg-[#7066e0] hover:bg-[#655cc9] text-white font-bold py-2 px-4 rounded-full active:bg-[#7066e0] focus:ring-[#b7b2ef]">
                   <Link to={'/'}>
                     Sign Out
                   </Link>

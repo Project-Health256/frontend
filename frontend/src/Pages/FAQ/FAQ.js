@@ -13,35 +13,35 @@ export default function FAQ() {
         <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <Link to="foodplate">
             <AiFillPieChart className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
-            <figcaption className="text-center">Food Plate</figcaption>
+            <figcaption className="text-center LI-UI">Food Plate</figcaption>
           </Link>
         </div>
         <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Effective Workouts */}
           <Link to="foodplate">
             <AiFillSliders className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
-            <figcaption className="text-center">Effective Workouts</figcaption>
+            <figcaption className="text-center LI-UI">Effective Workouts</figcaption>
           </Link>
         </div>
         <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Calories  */}
           <Link to="foodplate">
             <AiFillThunderbolt className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
-            <figcaption className="text-center">Calories</figcaption>
+            <figcaption className="text-center LI-UI">Calories</figcaption>
           </Link>
         </div>
         <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* Avoidance */}
           <Link to="foodplate">
             <AiFillWarning className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
-            <figcaption className="text-center">Avoidance</figcaption>
+            <figcaption className="text-center LI-UI">Avoidance</figcaption>
           </Link>
         </div>
         <div className="ml-3 p-5 w-min p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           {/* User Account */}
           <Link to="foodplate">
             <AiOutlineUser className="text-[5rem] pt-2 pl-2 hover:text-sunray-500" />
-            <figcaption className="text-center">User Account</figcaption>
+            <figcaption className="text-center LI-UI">User Account</figcaption>
           </Link>
         </div>
       </div>;
