@@ -5,6 +5,7 @@ import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 import { useState, useContext } from "react";
 import AppContext from "../../context";
 import { useNavigate, Navigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ export default function LoginPage() {
       setUser(parsedUser);
       setIsAuth(true)
     } else if (!result.token) {
+      Swal.fire('Wrong Credentials');
       setIsAuth(false);
       return;
     }
