@@ -180,7 +180,7 @@ export function Calculator({getData}) {
                     <option value="1.725">Very Active</option>
                     <option value="1.9">Extremely Active</option>
                   </Field>
-                  <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-sunray-700 peer-focus:dark:text-sunray-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 LI-UI ls">
+                  <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-sunray-700 peer-focus:dark:text-sunray-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 LI-UI tracking-[3.5px]">
                     Activity Level
                   </label>
                 </div>
@@ -206,7 +206,7 @@ export function Calculator({getData}) {
             </div>
             <button
               type="submit"
-              className="text-white bg-black hover:bg-[#FF99A8] focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-sunray-700 dark:hover:bg-[#FF99A8] dark:focus:ring-sunray-700"
+              className="text-white bg-[#7066e0] hover:bg-[#655cc9] focus:ring-4 focus:outline-none focus:ring-[#b7b2ef] font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-[#7066e0] dark:hover:bg-[#655cc9] dark:focus:ring-[#b7b2ef]"
             >
               {window.localStorage.getItem("token")
                 ? "Submit and Create Session"
