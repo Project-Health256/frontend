@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import { CalculatorResults } from "./CalculatorResultsTable/CalculatorResults";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 export function Calculator({getData}) {
   const [bmr, setBmr] = useState(0);
@@ -88,7 +89,13 @@ export function Calculator({getData}) {
       'success'
     )
     getData();
-  }
+  };
+
+  function displayInfo() {
+    Swal.fire(`Hello ${parsedUser.firstName} ${parsedUser.lastName}!`,
+      'Get started by entering your metrics and track your weekly progress!'
+    )
+  };
 
   const calculationDataSet = {
     bmr,
@@ -104,7 +111,14 @@ export function Calculator({getData}) {
     <>
     
       <div className="md:container md:mx-auto mt-3">
-        <div className="flex justify-center p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 LI-UI ls">Calorie & Macro Calculator</div>
+        <div className="flex justify-center p-6 min-w-sm mb-5 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 LI-UI ls">
+          Calorie & Macro Calculator
+          {window.localStorage.getItem("token") && (
+            <button onClick={displayInfo} className="ml-2">
+            <HelpOutlineIcon/>
+            </button>
+          )}
+          </div>
         <Formik
           initialValues={{
             age: 21,

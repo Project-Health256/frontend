@@ -65,13 +65,7 @@ export function ChartPage() {
   return (
     <>
       <NavBar />
-      <div className="flex justify-evenly mt-5">
-        <div className="w-1/5">
-          <UserProfileCard
-            firstName={verifiedUser.firstName}
-            lastName={verifiedUser.lastName}
-          />
-        </div>
+      <div className="flex justify-center mt-5">
         <div className="">
           <Calculator userSessions={userSessions} getData={data}/>
           <div className="flex w-2/5">
