@@ -55,8 +55,8 @@ export default function LoginPage() {
 
   return isAuth ? <Navigate to={'/'} /> : (
     <>
-      <LinkButton pathName="/" text="Home" />
     <div className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+      <LinkButton pathName="/" text="Home" />
       <h1 className="text-black font-bold text-center text-5xl">Login</h1>
       <h3 className="text-black font-bold text-center mt-4">
         Don't have an account yet?{" "}
