@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Front-End/static/css/main.da42164b.css",
-    "main.js": "/Front-End/static/js/main.53c2b3a6.js",
-    "static/js/787.cda612ba.chunk.js": "/Front-End/static/js/787.cda612ba.chunk.js",
-    "index.html": "/Front-End/index.html",
-    "main.da42164b.css.map": "/Front-End/static/css/main.da42164b.css.map",
-    "main.53c2b3a6.js.map": "/Front-End/static/js/main.53c2b3a6.js.map",
-    "787.cda612ba.chunk.js.map": "/Front-End/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/ProvidentLife/Front-End/static/css/main.da42164b.css",
+    "main.js": "/ProvidentLife/Front-End/static/js/main.39729374.js",
+    "static/js/787.cda612ba.chunk.js": "/ProvidentLife/Front-End/static/js/787.cda612ba.chunk.js",
+    "index.html": "/ProvidentLife/Front-End/index.html",
+    "main.da42164b.css.map": "/ProvidentLife/Front-End/static/css/main.da42164b.css.map",
+    "main.39729374.js.map": "/ProvidentLife/Front-End/static/js/main.39729374.js.map",
+    "787.cda612ba.chunk.js.map": "/ProvidentLife/Front-End/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da42164b.css",
-    "static/js/main.53c2b3a6.js"
+    "static/js/main.39729374.js"
   ]
 }
