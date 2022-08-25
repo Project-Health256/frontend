@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "http://Jayleaf1125.github.io/ProvidentLife/Front-End/frontend",
+  "homepage": "https://providentlife.github.io/frontend",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
