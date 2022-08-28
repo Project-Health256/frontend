@@ -5,26 +5,36 @@ export function AuthLandingPageTop() {
     "The best preparation for tommorow is doing your best today.",
     "It takes one month to see yourself change, 3 months for your friends and family, and 4 for the rest of the world.",
     "We cannot solve problems with the kind of thinking we employed when we came up with them.",
-    'Learn as if you will live forever, live like you will die tomorrow.',
-    'Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.'
+    "Learn as if you will live forever, live like you will die tomorrow.",
+    "Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.",
   ];
 
-  const dailyQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+  const dailyQuote =
+    motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
 
   return (
     <header>
       <div>
-        <div className="shadow-2xl flex justify-evenly h-96 items-center py-20 px-6 pt-16 bg-white md:flex-row dark:border-gray-700 dark:bg-gray-800">
-          <img
-            className="shadow-xl object-cover h-96 rounded-lg md:h-auto md:w-1/4 md:rounded-lg py-5 mt-2"
-            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/killing-that-kettlebell-workout-royalty-free-image-637772778-1562688657.jpg"
-          />
-          <div className="flex mx-3 flex-col rounded-xl shadow-md hidden md:block justify-end p-4 leading-normal">
-            <h5 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-              {dailyQuote}
-            </h5>
-            <br></br>
-          </div>
+        <div className="flex flex-col content-center text-center bg-gradient-to-t from-[#e1e0e0] via-[#969595] to-[#e1e0e0] text-black">
+          <figure class="w-full m-auto transition-all duration-300 filter grayscale hover:grayscale-0">
+            <img
+              class="w-full h-full"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgenesisgym.com.sg%2Fwp-content%2Fuploads%2F2015%2F11%2Funiversal-physique-gym-banner.jpg&f=1&nofb=1"
+              alt="image description"
+            />
+            <figcaption class="sm:absolute sm:inset-8 hidden xl:block px-4 my-8 text-lg text-white">
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <div className="flex mx-3 justify-center p-4 leading-normal">
+                <h5 className="text-2xl text-center font-bold tracking-tight dark:text-white">
+                  "{dailyQuote}"
+                </h5>
+                <br></br>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </header>

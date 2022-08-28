@@ -16,7 +16,7 @@ export function LandingPage() {
       <br></br>
       {!isAuth && !window.localStorage.getItem("token") && <SignUpSection />}
       {window.localStorage.getItem("token") && <AuthLandingPageTop />}
-      <div className="flex flex-col sm:flex-row items-center md:flex-row lg:flex-row sm:justify-evenly pt-8 pb-8">
+      <div className="flex flex-col space-y-4 sm:flex-col items-center md:flex-col lg:flex-row sm:justify-evenly pt-8 pb-8">
         <CalculatorCard />
         <FAQCard />
       </div>
