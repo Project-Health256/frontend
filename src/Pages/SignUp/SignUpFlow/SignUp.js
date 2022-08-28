@@ -7,6 +7,8 @@ import { useNavigate, Navigate } from "react-router-dom";
 import UpdateRegistration from "../../../updatedLoginSignIn/UpdateRegistration";
 import AppContext from "../../../context";
 import Swal from 'sweetalert2'
+import Lottie from "react-lottie-player";
+import animationData from "../../../Animation/8XO1tZuygW.json";
 // import '../../../registration.css'
 
 export default function SignUp() {
@@ -16,6 +18,7 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function handleFirstName(e) {
     setFirstName(e.target.value);
@@ -49,13 +52,21 @@ export default function SignUp() {
       },
       body: JSON.stringify(userInfo),
     });
-
+    setLoading(true);
     const results = await signUpUser.json();
-    if (results.message === "user by this email already exists") {
-      Swal.fire(
-       'This Email Is Already In Use'
-      )
-    } else navigate('/login', {replace : true});
+
+    setTimeout(() => {
+      if (results.message === "user by this email already exists") {
+        setLoading(false);
+        Swal.fire(
+         'This Email Is Already In Use'
+        )
+        return;
+      } else {
+        setLoading(false);
+        navigate('/login', {replace : true});
+      }
+    }, 4000);
   };
 
   return isAuth ? <Navigate to={'/'}/> : (
@@ -117,7 +128,8 @@ export default function SignUp() {
               />
               <label className="peer-focus:font-medium absolute text-sm text-black dark:text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col m-auto justify-center">
+              <div className="m-auto">{loading && <Lottie loop animationData={animationData} play style={{width: 80, height: 80}}/>}</div>
               <Button type="submit" text="Sign Up" />
             </div>
           </div>
