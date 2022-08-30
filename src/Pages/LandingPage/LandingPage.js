@@ -13,7 +13,6 @@ export function LandingPage() {
   return (
     <>
       <NavBar />
-      <br></br>
       {!isAuth && !window.localStorage.getItem("token") && <SignUpSection />}
       {window.localStorage.getItem("token") && <AuthLandingPageTop />}
       <div className="flex flex-col space-y-4 sm:flex-col items-center md:flex-col lg:flex-row sm:justify-evenly pt-8 pb-8">

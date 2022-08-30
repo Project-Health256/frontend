@@ -24,8 +24,8 @@ export default function FAQ() {
         </div>
         <div className="mb-5">
           <FAQCardComponent
-            image="https://healthyeater.com/wp-content/uploads/2022/02/TDEE-New.jpg"
-            topic="What is TDEE?"
+            image="https://i.pinimg.com/originals/6f/38/4c/6f384c8f945dca352fdf4cc9b09d3b30.png"
+            topic="Food Plate"
             summary={TDEESummary}
           />
         </div>
