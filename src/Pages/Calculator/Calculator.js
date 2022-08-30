@@ -132,7 +132,21 @@ export function Calculator({getData}) {
             calculateBMR(values);
             calculateWeightProgressEstimation(values.goal);
             if (window.localStorage.getItem("token")) {
-              setUserMetrics(values);
+              Swal.fire({
+                title: 'Would you like to create a session?',
+                text: "You will see your calculator results regardless of your answer.",
+                showCancelButton: true,
+                confirmButtonColor: '#7066e0',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes',
+                cancelButtonText: "No"
+              }).then((result) => {
+                if (!result.isConfirmed) {
+                  return
+                } else {
+                  setUserMetrics(values);
+                }
+              })
             }
           }}
         >
