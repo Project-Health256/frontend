@@ -52,7 +52,7 @@ export default function SignUp() {
       },
       body: JSON.stringify(userInfo),
     });
-    setLoading(true);
+    // setLoading(true);
     const results = await signUpUser.json();
 
     setTimeout(() => {
