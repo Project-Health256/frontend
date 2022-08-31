@@ -15,6 +15,8 @@ export default function FAQ() {
   const featureSummary =
     "We aim to guide users on how to make wise decisions in their life via a TDEE (Total Daily Energy Expenditure). Users can use our TDEE calculator to determine their total daily maintenance calories and macronutrients. Additionally, those who have registered have access to charts that, by tracking their progress, give them a visual depiction of their weight-loss journey. Once logged in, a user can utilize our chart tool to establish a session with their initial weight and a goal to gain or lose weight at that time. They can then follow their success weekly by graphing their weight progress.";
 
+    const foodPlateSummary = `People tend to forget a vital component in their journey and think calisthenics and weight training is the only aspect of it. An essential component of someone's weight journey is their food intake. A well-balanced diet consists of fruits, grains, vegetables, protein, dairy, and lots of water to maintain calorie consumption and a healthy body. Nevertheless, even with this information, it is still overwhelming to learn what food to eat and how much of it to consume. The article below will provide a starting point in learning about your food plate.`
+
   return (
     <>
       <NavBar />
@@ -27,13 +29,17 @@ export default function FAQ() {
             summary={TDEESummary}
           />
         </div>
+
         <div className="mb-5">
           <FAQCardComponent
             image="https://i.pinimg.com/originals/6f/38/4c/6f384c8f945dca352fdf4cc9b09d3b30.png"
             topic="Food Plate"
-            summary={TDEESummary}
+            summary={foodPlateSummary}
+            link="https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate/"
+            linkText="More Information"
           />
         </div>
+
         <div className="mb-5">
           <FAQCardComponent
             image="https://www.upvoty.com/wp-content/uploads/2020/09/features.png"
