@@ -8,7 +8,12 @@ export default function FAQ() {
   const QUOTE = quotes[Math.floor(Math.random() * quotes.length)];
 
   const TDEESummary =
-    "TDEE stands for Total Daily Energy Expenditure (aka your maintenance calories). TDEE is the total energy needed daily to maintain body weight after factoring in all activities after 24 hours. It is calculated by multiplying your BMR (Basal Metabolic Rate), BMR is a component of your TDEE and the amount of calories your body needs to continue to operate. But it is NOT the amount of calories you should eat to lose/gain weight. Keeping daily caloric intake helps maintain the same body weight. Be that as it may, figuring out your TDEE is enough to track a weight loss/gain journey.";
+    "Total Daily Energy Expenditure is referred to as TDEE (aka your maintenance calories). The total daily energy expenditure (TDEE), which takes into account all daily activities, is what is required to maintain body weight. It is computed by dividing your BMR (Basal Metabolic Rate), which is a component of your TDEE and the number of calories your body requires to function, by your level of activity. However, it is NOT the recommended calorie intake for weight loss or gain. Maintaining daily calorie intake contributes to keeping body weight constant. Whatever the case, knowing your TDEE is sufficient to keep track of your weight gain and decrease.";
+
+  const foodPlateSummary = "";
+
+  const featureSummary =
+    "We aim to guide users on how to make wise decisions in their life via a TDEE (Total Daily Energy Expenditure). Users can use our TDEE calculator to determine their total daily maintenance calories and macronutrients. Additionally, those who have registered have access to charts that, by tracking their progress, give them a visual depiction of their weight-loss journey. Once logged in, a user can utilize our chart tool to establish a session with their initial weight and a goal to gain or lose weight at that time. They can then follow their success weekly by graphing their weight progress.";
 
   return (
     <>
@@ -31,12 +36,14 @@ export default function FAQ() {
         </div>
         <div className="mb-5">
           <FAQCardComponent
-            image="https://healthyeater.com/wp-content/uploads/2022/02/TDEE-New.jpg"
-            topic="How to use"
-            summary={TDEESummary}
+            image="https://www.upvoty.com/wp-content/uploads/2020/09/features.png"
+            topic="Utilizing our features"
+            summary={featureSummary}
           />
         </div>
       </div>
+      <br></br>
+      <br></br>
       <Footer />
     </>
   );
