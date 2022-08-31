@@ -1,13 +1,19 @@
 import React from "react";
 import { useState } from "react";
 
-export function FAQCardComponent({ image, topic, summary, link = "", linkText = "" }) {
+export function FAQCardComponent({
+  image,
+  topic,
+  summary,
+  link = "",
+  linkText = "",
+}) {
   const [readMore, setReadMore] = useState(false);
   const halfText = summary.slice(0, summary.length / 3);
 
   function showMore() {
     setReadMore(true);
-  };
+  }
 
   function showLess() {
     setReadMore(false);
@@ -15,27 +21,30 @@ export function FAQCardComponent({ image, topic, summary, link = "", linkText = 
 
   return (
     <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      
       <img
         class="rounded-t-lg"
         style={{ width: 500, height: 200 }}
         src={image}
         alt=""
       />
-
-
       <div class="p-5">
-
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {topic}
         </h5>
-
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {!readMore && <>{halfText}...</>}
-          {readMore && <>{summary}</>}
-          <a className="text-salmonPink-600 hover:text-salmonPink-900 hover:italic" href={link}>{linkText}</a>
+          {readMore && (
+            <>
+              {summary}{" "}
+              <a
+                className="text-salmonPink-600 hover:text-salmonPink-900 hover:italic"
+                href={link}
+              >
+                {linkText}
+              </a>
+            </>
+          )}
         </p>
-
         {!readMore && (
           <>
             <button
@@ -47,7 +56,6 @@ export function FAQCardComponent({ image, topic, summary, link = "", linkText = 
             </button>
           </>
         )}
-
         {readMore && (
           <>
             <button
@@ -59,10 +67,7 @@ export function FAQCardComponent({ image, topic, summary, link = "", linkText = 
             </button>
           </>
         )}
-
       </div>
-      
-
     </div>
   );
 }
