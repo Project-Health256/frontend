@@ -38,7 +38,7 @@ export function FAQCardComponent({
               {summary}{" "}
               <a
                 className="text-salmonPink-600 hover:text-salmonPink-900 hover:italic"
-                href={link}
+                href={link} target="_blank"
               >
                 {linkText}
               </a>
