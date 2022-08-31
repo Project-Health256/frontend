@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export function FAQCardComponent({ image, topic, summary }) {
+export function FAQCardComponent({ image, topic, summary, link = "", linkText = "" }) {
   const [readMore, setReadMore] = useState(false);
   const halfText = summary.slice(0, summary.length / 3);
 
@@ -33,6 +33,7 @@ export function FAQCardComponent({ image, topic, summary }) {
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {!readMore && <>{halfText}...</>}
           {readMore && <>{summary}</>}
+          <a className="text-salmonPink-600 hover:text-salmonPink-900 hover:italic" href={link}>{linkText}</a>
         </p>
 
         {!readMore && (
@@ -58,6 +59,7 @@ export function FAQCardComponent({ image, topic, summary }) {
             </button>
           </>
         )}
+
       </div>
       
 
