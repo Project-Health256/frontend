@@ -19,16 +19,15 @@ export default function FAQ() {
     <>
       <NavBar />
       <Header text={QUOTE} />
-      <div className="mt-5 flex flex-col sm:flex-row sm:justify-evenly items-center">
-        <div className="mb-5">
+      <div className="mt-5 lg:mb-5 flex flex-col lg:flex-row lg:justify-evenly content-center items-center">
+        <div className="mb-5 lg:h-screen" >
           <FAQCardComponent
             image="https://healthyeater.com/wp-content/uploads/2022/02/TDEE-New.jpg"
             topic="What is TDEE?"
             summary={TDEESummary}
           />
         </div>
-
-        <div className="mb-5">
+        <div className="mb-5 lg:h-screen" >
           <FAQCardComponent
             image="https://i.pinimg.com/originals/6f/38/4c/6f384c8f945dca352fdf4cc9b09d3b30.png"
             topic="Food Plate"
@@ -37,8 +36,7 @@ export default function FAQ() {
             linkText="More Information"
           />
         </div>
-
-        <div className="mb-5">
+        <div className="mb-5 lg:h-screen" >
           <FAQCardComponent
             image="https://www.upvoty.com/wp-content/uploads/2020/09/features.png"
             topic="Utilizing our features"
