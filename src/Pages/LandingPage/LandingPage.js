@@ -9,7 +9,6 @@ import AppContext from "../../context";
 
 export function LandingPage() {
   const {isAuth} = useContext(AppContext);
-
   return (
     <>
       <NavBar />
