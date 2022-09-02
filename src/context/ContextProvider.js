@@ -1,10 +1,16 @@
-import react, {useState} from 'react';
+import react, {useState, useEffect} from 'react';
 import AppContext from '.';
 import App from '../App';
 
 const ContextProvider = (props) => {
     const [user, setUser] = useState({});
     const [isAuth, setIsAuth] = useState(false);
+
+    useEffect(() => {
+        fetch('https://provident-life.herokuapp.com/user/prefetch')
+        .then(res => res.json())
+        .then(data => console.log(data));
+    }, [])
 
     const context = {
         user,
