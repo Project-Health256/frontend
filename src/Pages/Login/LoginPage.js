@@ -8,6 +8,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Lottie from "react-lottie-player";
 import animationData from "../../Animation/8XO1tZuygW.json";
+import RegistrationPage from "../Registration/RegistrationPage";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -132,6 +133,7 @@ export default function LoginPage() {
           </div>
         </form>
       </div>
+      <RegistrationPage />
     </>
   );
 }
