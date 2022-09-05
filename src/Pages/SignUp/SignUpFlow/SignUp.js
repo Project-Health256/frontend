@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
-import Button from "../../../global-components/LinkButton/Button";
-import { InputTextForm } from "../../../global-components/LinkButton/InputTextForm";
-import { LinkButton } from "../../../global-components/LinkButton/Link-Button";
-import { useState, useContext } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
-import UpdateRegistration from "../../../updatedLoginSignIn/UpdateRegistration";
-import AppContext from "../../../context";
-import Swal from 'sweetalert2'
+import { useContext, useState } from "react";
 import Lottie from "react-lottie-player";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 import animationData from "../../../Animation/8XO1tZuygW.json";
+import AppContext from "../../../context";
+import Button from "../../../global-components/LinkButton/Button";
+import { LinkButton } from "../../../global-components/LinkButton/Link-Button";
 // import '../../../registration.css'
 
 export default function SignUp() {
