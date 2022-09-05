@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Button from "../../global-components/LinkButton/Button";
-import { InputTextForm } from "../../global-components/LinkButton/InputTextForm";
 import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 import { useState, useContext } from "react";
 import AppContext from "../../context";
