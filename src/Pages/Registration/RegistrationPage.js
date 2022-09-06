@@ -192,7 +192,6 @@ export default function RegistrationPage() {
                             </div>
                         </div>
                     </div>
-                </div>
                 <div className="flex flex-col m-auto justify-center">
                     <div className="m-auto">
                         {loading && (
@@ -204,6 +203,7 @@ export default function RegistrationPage() {
                             />
                         )}
                     </div>
+                </div>
                 </div>
             </>
         )
