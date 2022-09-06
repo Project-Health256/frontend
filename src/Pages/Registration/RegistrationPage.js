@@ -9,20 +9,14 @@ import { LinkButton } from "../../global-components/LinkButton/Link-Button";
 
 export default function RegistrationPage() {
     // Change Form
-    const [isSignUpActive, setIsSignUpActive] = useState(false);
-    const [isSignInActive, setIsSignInActive] = useState(true);
+    const [isSignUpActive, setIsSignUpActive] = useState(false);;
 
     function displayOverlay(event) {
-        const currentlyActive = event.target.id;
-        if (currentlyActive === "signUp") {
-            setIsSignUpActive(current => !current)
-            setIsSignInActive(current => !current)
-        }
+        event.target.id === "signUp" ? setIsSignUpActive(current => !current) : setIsSignUpActive(current => !current)
+    }
 
-        if (currentlyActive === "signIn") {
-            setIsSignUpActive(current => !current)
-            setIsSignInActive(current => !current)
-        }
+    function transitionToSignUp() {
+
     }
 
     // Login Section
@@ -170,7 +164,7 @@ export default function RegistrationPage() {
                                     onChange={handleEmail} />
                                 <input type="password" placeholder="Password" className="input" value={password}
                                     onChange={handlePassword} />
-                                <button className="button" type="submit">Sign In</button>
+                                <button className="button" type="submit" onClick={transitionToSignUp}>Sign In</button>
                             </form>
                         </div>
 
