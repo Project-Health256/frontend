@@ -23,7 +23,7 @@ export function SignUpSection() {
             <h3 className="text-2xl font-bold mb-8 LI-UI">
               Click Below to Sign Up
             </h3>
-            <LinkButton className="cursor pointer" pathName="/signup" text="Sign Up" />
+            <LinkButton className="cursor pointer" pathName="/login" text="Sign Up" />
           </figcaption>
         </figure>
       </div>
