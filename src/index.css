@@ -51,15 +51,15 @@ body {
 .button {
 	border-radius: 20px;
 	border: 1px solid #F2eee3;
-	background-color: #F2eee3;
-	color: black;
+	color: white;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
-	border-color: red;
+	border-color: white;
+	background-color: transparent;
 }
 
 .button:active {
@@ -72,11 +72,15 @@ body {
 
 .button.ghost {
 	background-color: transparent;
-	border-color: red;
+	border-color: white;
+}
+
+.button.ghost:hover {
+	background-color: #7066E0;
 }
 
 .form {
-	background-color: #FFFFFF;
+	background-color: #B7B2EF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -87,11 +91,13 @@ body {
 }
 
 .input {
-	background-color: #f2eee3;
+	background-color: #fff;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	border-radius: 0.25rem;
+	font-family: 'LT Wave Mono', sans-serif;
 }
 
 .reg-container {
@@ -165,9 +171,9 @@ body {
 }
 
 .overlay {
-	background: #F2eee3;
-	background: -webkit-linear-gradient(to right, #F2eee3, #e7d4c5);
-	background: linear-gradient(to right, #F2eee3, #e7d4c5);
+	background: #7066E0;
+	background: -webkit-linear-gradient(to right, #7066E0, #544ca8);
+	background: linear-gradient(to right, #7066E0, #7066E0);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

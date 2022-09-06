@@ -16,7 +16,7 @@ export default function RegistrationPage() {
     }
 
     function transitionToSignUp() {
-
+        setIsSignUpActive(current => !current)
     }
 
     // Login Section
@@ -134,13 +134,13 @@ export default function RegistrationPage() {
         ) :
         (
             <>
-                    <LinkButton pathName="/" text="Home" />
+                <LinkButton pathName="/" text="Home" />
                 <div className="registration-body">
                     <div className={`reg-container ${isSignUpActive ? "right-panel-active" : ""}`} id="container">
 
                         <div className="form-container sign-up-container">
                             <form className="form" onSubmit={handleSignUp}>
-                                <h1 className="h1">Create Account</h1>
+                                <h1 className="h1 text-black LI-UI text-2xl">Create Account</h1>
                                 <input type="text" placeholder="First Name" className="input" required=""
                                     value={firstName}
                                     onChange={handleFirstName} />
@@ -153,51 +153,51 @@ export default function RegistrationPage() {
                                 <input type="password" placeholder="Password" className="input" required=""
                                     value={password}
                                     onChange={handlePassword} />
-                                <button className="button" type="submit">Sign Up</button>
+                                <button className="button border-white hover:bg-[#D0CCF5] " type="submit" onClick={transitionToSignUp}>Sign Up</button>
                             </form>
                         </div>
 
                         <div className="form-container sign-in-container">
                             <form className="form" onSubmit={handleLogin}>
-                                <h1 className="h1">Sign in</h1>
+                                <h1 className="h1 text-black LI-UI text-2xl">Sign in</h1>
                                 <input type="email" placeholder="Email" className="input" value={email}
                                     onChange={handleEmail} />
                                 <input type="password" placeholder="Password" className="input" value={password}
                                     onChange={handlePassword} />
-                                <button className="button" type="submit" onClick={transitionToSignUp}>Sign In</button>
+                                <button className="button border-white hover:bg-[#D0CCF5] " type="submit">Sign In</button>
                             </form>
                         </div>
 
 
                         <div className="overlay-container">
                             <div className="overlay">
-                                <div className="overlay-panel overlay-left">
-                                    <h1 className="h1">Welcome Back!</h1>
-                                    <p className="p">To keep connected with us please login with your personal details</p>
+                                <div className="overlay-panel overlay-left bg-[#655CC9]">
+                                    <h1 className="h1 text-white LI-UI text-2xl">Welcome Back!</h1>
+                                    <p className="p text-white LI-Mono text-2xl">To keep connected with us please login with your personal details</p>
                                     <button className="ghost button" id="signIn" onClick={displayOverlay}>Sign In</button>
                                 </div>
 
-                                <div className="overlay-panel overlay-right">
-                                    <h1 className="h1">Hi There!</h1>
-                                    <p className="p">Enter your personal details to open an account with us</p>
+                                <div className="overlay-panel overlay-right bg-[#655CC9]">
+                                    <h1 className="h1 text-white LI-UI text-2xl">Hi There!</h1>
+                                    <p className="p text-white LI-Mono text-2xl">Enter your personal details to open an account with us</p>
                                     <button className="ghost button" id="signUp" onClick={displayOverlay}>Sign Up</button>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                <div className="flex flex-col m-auto justify-center">
-                    <div className="m-auto">
-                        {loading && (
-                            <Lottie
-                                loop
-                                animationData={animationData}
-                                play
-                                style={{ width: 80, height: 80 }}
-                            />
-                        )}
+                    <div className="flex flex-col m-auto justify-center">
+                        <div className="m-auto">
+                            {loading && (
+                                <Lottie
+                                    loop
+                                    animationData={animationData}
+                                    play
+                                    style={{ width: 80, height: 80 }}
+                                />
+                            )}
+                        </div>
                     </div>
-                </div>
                 </div>
             </>
         )
