@@ -16,6 +16,19 @@ export default function RegistrationPage() {
     }
 
     function transitionToSignUp() {
+        if (firstName === "") {
+            Swal.fire("Please Enter Your First Name");
+            return;
+        } else if (lastName === "") {
+            Swal.fire("Please Enter Your Last Name");
+            return;
+        } else if (email === "") {
+            Swal.fire("Please Enter Your Email");
+            return;
+        } else if (password === "") {
+            Swal.fire("Please Enter Your Password");
+            return;
+        }
         setIsSignUpActive(current => !current)
     }
 
@@ -95,6 +108,20 @@ export default function RegistrationPage() {
 
     async function handleSignUp(e) {
         e.preventDefault();
+        if (firstName === "") {
+            Swal.fire("Please Enter Your First Name");
+            return;
+        } else if (lastName === "") {
+            Swal.fire("Please Enter Your Last Name");
+            return;
+        } else if (email === "") {
+            Swal.fire("Please Enter Your Email");
+            return;
+        } else if (password === "") {
+            Swal.fire("Please Enter Your Password");
+            return;
+        }
+        
         const userInfo = {
             firstName,
             lastName,
@@ -128,7 +155,7 @@ export default function RegistrationPage() {
 
 
 
-    return isAuth ?
+    return window.localStorage.getItem("token") ?
         (
             <Navigate to={"/"} />
         ) :
